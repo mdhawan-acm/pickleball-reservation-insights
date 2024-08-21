@@ -1,15 +1,33 @@
+import os
 import streamlit as st
 import pandas as pd
-# import openai
+import yaml
+from openai import OpenAI
 
-# Hardcoded OpenAI API key
-# openai.api_key = "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"
+# Function to load settings locally from config.yaml
+def load_local_settings():
+    try:
+        with open("config.yaml", "r") as file:
+            config = yaml.safe_load(file)
+            return config["magic_string"], config["openai_api_key"]
+    except FileNotFoundError:
+        st.error("Config file not found locally.")
+        return None, None
 
-# Define your magic string
-MAGIC_STRING = "ACM"
+# Determine if running locally or on Streamlit Cloud
+if "STREAMLIT_SERVER_URL" in os.environ:
+    # Running on Streamlit Cloud: Fetch settings from secrets
+    MAGIC_STRING = st.secrets["general"]["magic_string"]
+    openai_api_key = st.secrets["general"]["openai_api_key"]
+else:
+    # Running locally: Load settings from the local file
+    MAGIC_STRING, openai_api_key = load_local_settings()
 
 # Title of the Streamlit app
 st.title('Pickleball Facility Reservation Insights')
+
+# Initialize OpenAI client with the API key
+client = OpenAI(api_key=openai_api_key)
 
 # Magic string authentication
 user_input = st.text_input("Enter the magic string to access the app:")
@@ -55,7 +73,26 @@ if user_input == MAGIC_STRING:
         st.header("Reservation Data")
         st.dataframe(data)
 
-        # Additional features can be added here like filtering by date, court, or coach
+        # Step 1: Text box to query OpenAI's LLM
+        query = st.text_input("Ask for insights or analysis related to the data:")
+
+        if query:
+            # Step 2: Send query to OpenAI and get response
+            try:
+                stream = client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[{"role": "user", "content": query}],
+                    stream=True,
+                )
+                response_text = ""
+                for chunk in stream:
+                    if chunk.choices[0].delta.content is not None:
+                        response_text += chunk.choices[0].delta.content
+                # Step 3: Display OpenAI response
+                st.subheader("Response from OpenAI")
+                st.write(response_text)
+            except Exception as e:
+                st.error(f"Error communicating with OpenAI: {e}")
 
     else:
         st.write("Please upload a CSV file to view insights.")

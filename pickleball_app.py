@@ -14,14 +14,11 @@ def load_local_settings():
         st.error("Config file not found locally.")
         return None, None
 
-# Determine if running locally or on Streamlit Cloud
-if "STREAMLIT_SERVER_URL" in os.environ:
-    # Running on Streamlit Cloud: Fetch settings from secrets
+MAGIC_STRING, openai_api_key = load_local_settings()
+if MAGIC_STRING is None or openai_api_key is None:
+    # Fetch settings from Streamlit Cloud secrets
     MAGIC_STRING = st.secrets["general"]["magic_string"]
     openai_api_key = st.secrets["general"]["openai_api_key"]
-else:
-    # Running locally: Load settings from the local file
-    MAGIC_STRING, openai_api_key = load_local_settings()
 
 # Title of the Streamlit app
 st.title('Pickleball Facility Reservation Insights')

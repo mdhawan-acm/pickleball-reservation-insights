@@ -3,7 +3,7 @@ import pandas as pd
 # import openai
 
 # Hardcoded OpenAI API key
-openai.api_key = "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"
+# openai.api_key = "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"
 
 # Define your magic string
 MAGIC_STRING = "ACM"

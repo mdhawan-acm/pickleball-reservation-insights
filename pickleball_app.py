@@ -59,36 +59,11 @@ if user_input == MAGIC_STRING:
         total_revenue = data['Revenue'].sum()
         total_court_utilization = data['CourtUtilization'].sum()
         total_registrants = data['Registrants'].sum()
-
-        # Display key metrics
-        st.header("Key Metrics")
-        st.metric("Total Revenue ($)", f"${total_revenue:,.2f}")
-        st.metric("Total Court Utilization (Court-Hours)", total_court_utilization)
-        st.metric("Total Registrants", total_registrants)
-        
-        # Display the data
-        st.header("Reservation Data")
-        st.dataframe(data)
-
-        # Provide the ability to download the processed data
-        csv_data = data.to_csv(index=False).encode('utf-8')
-        st.download_button(
-            label="Download Data as CSV",
-            data=csv_data,
-            file_name='processed_reservation_data.csv',
-            mime='text/csv',
-        )
-
         # Convert the DataFrame to JSON (records format)
         json_data = data.to_json(orient="records")
-
-        # Initialize session state to track if data has been sent
-        if "data_sent" not in st.session_state:
-            st.session_state.data_sent = False
-
+        st.header("Ask AI")   
         # Text box for user queries
         query = st.text_input("Ask for insights or analysis related to the data:")
-
         if query:
             try:
                 # Initialize the response_text to accumulate the chunks
@@ -112,7 +87,7 @@ if user_input == MAGIC_STRING:
                         model="gpt-4o-mini",
                         messages=[
                             {"role": "system", "content": "You are a data analyst."},
-                            {"role": "user", "content": query}
+                            {"role": "user", "content": f"Here is my dataset: {json_data}. {query}"}
                         ],
                         stream=True
                     )
@@ -128,8 +103,31 @@ if user_input == MAGIC_STRING:
 
             except Exception as e:
                 st.error(f"Error communicating with OpenAI: {e}")
+        
+        
+        # Display key metrics
+        st.header("Key Metrics")
+        st.metric("Total Revenue ($)", f"${total_revenue:,.2f}")
+        st.metric("Total Court Utilization (Court-Hours)", total_court_utilization)
+        st.metric("Total Registrants", total_registrants)
 
+        # Initialize session state to track if data has been sent
+        if "data_sent" not in st.session_state:
+            st.session_state.data_sent = False
+       
 
+    # Display the data
+        st.header("Reservation Data")
+        st.dataframe(data)
+
+        # Provide the ability to download the processed data
+        csv_data = data.to_csv(index=False).encode('utf-8')
+        st.download_button(
+            label="Download Data as CSV",
+            data=csv_data,
+            file_name='processed_reservation_data.csv',
+            mime='text/csv',
+        )
     except FileNotFoundError:
         st.error("The file combined_reservation_data.csv was not found.")
 else:

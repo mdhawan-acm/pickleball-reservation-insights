@@ -11,7 +11,7 @@ def load_local_settings():
             config = yaml.safe_load(file)
             return config["magic_string"], config["openai_api_key"]
     except FileNotFoundError:
-        st.error("Config file not found locally.")
+        # st.error("Config file not found locally.")
         return None, None
 
 MAGIC_STRING, openai_api_key = load_local_settings()
@@ -49,16 +49,8 @@ if user_input == MAGIC_STRING:
                 return 0
             return len(court_string.split(','))
 
-        # Add a column for the number of courts booked
-        data['CourtCount'] = data['Court'].apply(count_courts)
-
-        # Calculate 'CourtUtilization' (court hours used)
-        data['CourtUtilization'] = data['CourtCount'] * data['Duration']
-
         # Calculate key metrics
-        total_revenue = data['Revenue'].sum()
-        total_court_utilization = data['CourtUtilization'].sum()
-        total_registrants = data['Registrants'].sum()
+        total_revenue = data['Revenue'].sum() / data['Date'].nunique()
         # Convert the DataFrame to JSON (records format)
         json_data = data.to_json(orient="records")
         st.header("Ask AI")   
@@ -107,9 +99,7 @@ if user_input == MAGIC_STRING:
         
         # Display key metrics
         st.header("Key Metrics")
-        st.metric("Total Revenue ($)", f"${total_revenue:,.2f}")
-        st.metric("Total Court Utilization (Court-Hours)", total_court_utilization)
-        st.metric("Total Registrants", total_registrants)
+        st.metric("Avg Daily Total Revenue ($)", f"${total_revenue:,.2f}")
 
         # Initialize session state to track if data has been sent
         if "data_sent" not in st.session_state:

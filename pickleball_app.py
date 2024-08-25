@@ -23,31 +23,17 @@ if MAGIC_STRING is None or openai_api_key is None:
 # Title of the Streamlit app
 st.title('Pickleball Facility Reservation Insights')
 
-# Initialize OpenAI client with the API key
-client = OpenAI(api_key=openai_api_key)
-
 # Magic string authentication
 user_input = st.text_input("Enter the magic string to access the app:")
 
 if user_input == MAGIC_STRING:
     # Assume the CSV file is present locally as combined_reservation_data.csv
-    file_path = "combined_reservation_data.csv"
-    
+    file_path = "combined_total_data.csv"
+    # Initialize OpenAI client with the API key
+    client = OpenAI(api_key=openai_api_key)
     try:
         # Load the data directly from the CSV file
         data = pd.read_csv(file_path)
-
-        # Convert 'Fees' to numeric values
-        data['Fees'] = data['Fees'].replace('[\$,]', '', regex=True).astype(float)
-
-        # Calculate 'Revenue'
-        data['Revenue'] = data['Fees'] * data['Registrants']
-
-        # Function to count courts booked
-        def count_courts(court_string):
-            if pd.isna(court_string):
-                return 0
-            return len(court_string.split(','))
 
         # Calculate key metrics
         total_revenue = data['Revenue'].sum() / data['Date'].nunique()

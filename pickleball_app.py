@@ -86,12 +86,14 @@ if user_input == MAGIC_STRING:
         # Display key metrics
         st.header("Key Metrics")
         st.metric("Avg Daily Total Revenue ($)", f"${total_revenue:,.2f}")
-
+        
         # Initialize session state to track if data has been sent
         if "data_sent" not in st.session_state:
             st.session_state.data_sent = False
        
-
+        st.header('Revenue By Date')    
+        daily_revenue = data.groupby('Date')['Revenue'].sum().reset_index()
+        st.dataframe(daily_revenue)
     # Display the data
         st.header("Reservation Data")
         st.dataframe(data)

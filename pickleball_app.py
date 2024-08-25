@@ -21,7 +21,7 @@ if MAGIC_STRING is None or openai_api_key is None:
     openai_api_key = st.secrets["general"]["openai_api_key"]
 
 # Title of the Streamlit app
-st.title('Pickleball Facility Reservation Insights')
+st.title('Pickleball Facility Revenue Insights')
 
 # Magic string authentication
 user_input = st.text_input("Enter the magic string to access the app:")

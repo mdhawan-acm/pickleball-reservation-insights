@@ -71,12 +71,21 @@ Play with Pro - Beginner & Advanced Beginner,2024-08-24,6:00 PM - 7:00 PM,30.0,F
 Open-Play,2024-08-24,7:00 AM - 10:00 AM,15.0,2 of 50 spots remaining,,"Court #3, Court #4, Court #5, Court #6, Court #7, Court #8",48,720.0
 Intermediate Clinic,2024-08-24,10:00 AM - 12:00 PM,30.0,Full,,"Court #5, Court #6, Court #7",12,360.0
 Beginner Clinic,2024-08-24,7:00 PM - 9:00 PM,30.0,Full,Jacob Stegall,"Court #5, Court #6, Court #7",12,360.0
+Drill w/Expert - Beginner/Advanced Beginner,2024-08-25,10:00 AM - 11:00 AM,25.0,Full,,Court #1,4,100.0
+Open-Play,2024-08-25,12:00 PM - 3:00 PM,15.0,Full,,"Court #1, Court #2, Court #3, Court #4, Court #5, Court #6, Court #7, Court #8",64,960.0
+Private Lesson w/Pro - Beginner/Advanced Beginner or Intermediate,2024-08-25,4:00 PM - 5:00 PM,100.0,Full,Jill Wright,Court #1,1,100.0
+Private Lesson w/Pro - Any level,2024-08-25,5:00 PM - 6:00 PM,100.0,Full,Garrett Peterson,Court #1,1,100.0
+Open-Play,2024-08-25,6:00 PM - 9:00 PM,15.0,Full,,"Court #1, Court #2, Court #3, Court #4, Court #5, Court #6, Court #7, Court #8",64,960.0
+Private Lesson w/Pro - Any level,2024-08-25,10:00 AM - 11:00 AM,100.0,Full,Garrett Peterson,Court #2,1,100.0
+Free Intro To Pickleball,2024-08-25,3:00 PM - 5:00 PM,0.0,"Full
+-9 REGISTRANT(S) WAITLISTED",Garrett Peterson,"Court #6, Court #7",14,0.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #1,16,320.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #1,16,320.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #1,12,240.0
 Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #1,20,400.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #1,12,240.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #1,18,360.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #1,16,320.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #2,22,440.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #2,22,440.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #2,20,400.0
@@ -84,6 +93,7 @@ Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #2,20,400.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #2,18,360.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #2,16,320.0
 Reserved,2024-08-17,,20.0,Fees For 30 mins slot,,Court #2,30,600.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #2,20,400.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #3,18,360.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #3,28,560.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #3,16,320.0
@@ -91,33 +101,39 @@ Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #3,18,360.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #3,26,520.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #3,22,440.0
 Reserved,2024-08-17,,20.0,Fees For 30 mins slot,,Court #3,30,600.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #3,22,440.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #4,22,440.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #4,28,560.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #4,24,480.0
 Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #4,22,440.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #4,28,560.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #4,22,440.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #4,22,440.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #5,28,560.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #5,16,320.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #5,14,280.0
 Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #5,24,480.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #5,22,440.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #5,14,280.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #5,22,440.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #6,22,440.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #6,18,360.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #6,18,360.0
 Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #6,18,360.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #6,22,440.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #6,14,280.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #6,18,360.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #7,22,440.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #7,18,360.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #7,16,320.0
 Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #7,18,360.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #7,22,440.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #7,14,280.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #7,18,360.0
 Reserved,2024-08-19,,20.0,Fees For 30 mins slot,,Court #8,22,440.0
 Reserved,2024-08-20,,20.0,Fees For 30 mins slot,,Court #8,22,440.0
 Reserved,2024-08-21,,20.0,Fees For 30 mins slot,,Court #8,18,360.0
 Reserved,2024-08-22,,20.0,Fees For 30 mins slot,,Court #8,22,440.0
 Reserved,2024-08-23,,20.0,Fees For 30 mins slot,,Court #8,20,400.0
 Reserved,2024-08-24,,20.0,Fees For 30 mins slot,,Court #8,22,440.0
+Reserved,2024-08-25,,20.0,Fees For 30 mins slot,,Court #8,22,440.0
